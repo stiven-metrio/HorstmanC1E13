@@ -9,6 +9,8 @@
 package java_ex13_arraylottery;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Random;
 
 /**
@@ -33,12 +35,15 @@ public class Java_Ex13_ArrayLottery {
         Random random = new Random();
         int r;
         for (int i=0;i<=5;i++){
-            r = random.nextInt(((49 - 1) + 1) + 1);
-            result.add((String.valueOf(r)));
+            r = random.nextInt(49-i)+1;
+            result.add((String.valueOf(lotteryNumbers.get(r-1))));
             lotteryNumbers.remove(r-1);
+            System.out.println(r);
         }
-        // System.out.println(result);
+        System.out.println(result);
         // System.out.println(lotteryNumbers);
+        
+        // Sort result
     }
     
 }
