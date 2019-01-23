@@ -9,6 +9,7 @@
 package java_ex13_arraylottery;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 /**
  *
@@ -20,12 +21,24 @@ public class Java_Ex13_ArrayLottery {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // Create an Array List to save possible resullts.
+        // Create an Array List to save possible results.
         ArrayList<String> lotteryNumbers = new ArrayList<>();
         for (int i = 1; i <= 49; i++){
             lotteryNumbers.add((String.valueOf(i)));
         }
         System.out.println(lotteryNumbers);
+        
+        // Take six random numbers and save them in another ArrayList
+        ArrayList<String> result = new ArrayList<>();
+        Random random = new Random();
+        int r;
+        for (int i=0;i<=5;i++){
+            r = random.nextInt(((49 - 1) + 1) + 1);
+            result.add((String.valueOf(r)));
+            lotteryNumbers.remove(r-1);
+        }
+        // System.out.println(result);
+        // System.out.println(lotteryNumbers);
     }
     
 }
